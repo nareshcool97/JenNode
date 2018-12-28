@@ -1,10 +1,20 @@
 {
-   "name": "node-app",
+   "name": "jennode",
    "description": "hello jenkins test app",
    "version": "0.0.1",
    "private": true,
+   "main": "index.js",
+   "scripts": {
+      "start": "nodemon src/index.js",
+      "test": "time ./node_modules/.bin/nyc ./node_modules/.bin/mocha --recursive --timeout 10000",
+      "test-parallel": "time ./node_modules/.bin/nyc ./node_modules/.bin/mocha-parallel-tests  --recursive --timeout 10000",
+      "test-coverage": "./node_modules/.bin/nyc  --include-all-sources --root ./src --reporter=lcov --reporter=text-lcov npm test"
+   },
+   "author": "ANK",
+   "license": "ISC",
    "dependencies": {
-      "express": "^4.16.4"
+      "express": "^4.16.4",
+      "nodemon": "^1.18.9"
    },
    "devDependencies": {
       "mocha": "^5.2.0",
