@@ -1,0 +1,23 @@
+{
+  "name": "JenNode",
+  "description": "Sample on jenkins pipeline",
+  "scripts": {
+    "postdeploy": "script/test"
+  },
+  "env": {
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "stack": "heroku-18",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
